@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xtool</title>
+    <script>
+        let socket;
+        // 判断浏览器是否支持WebSocket
+        if ('WebSocket' in window) {
+            socket = new WebSocket("ws://localhost:8080/websocket")
+            // 第一次连接
+            socket.onopen = function (ev) {
+                console.log(ev)
+                // 向服务器发送消息
+                socket.send('sfsd')
+            }
+            // 连接被关闭： 浏览器刷新 | 浏览器关闭 | 服务器关闭
+            socket.onclose = function (ev) {
+                console.log(ev)
+            }
+            // 连接错误
+            socket.onerror = function (ev) {
+                console.log(ev)
+            }
+            // 接收消息
+            socket.onmessage = function (ev) {
+                // 打印消息
+                console.log(ev.data)
+            }
+        }
+
+    </script>
+</head>
+<body>
+<button>发送消息</button>
+<div></div>
+</body>
+</html>

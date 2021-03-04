@@ -239,8 +239,7 @@ public class HttpUtils {
      */
     public static CloseableHttpClient buildHttpClient() {
         try {
-            RegistryBuilder<ConnectionSocketFactory> builder = RegistryBuilder
-                    .create();
+            RegistryBuilder<ConnectionSocketFactory> builder = RegistryBuilder.create();
             ConnectionSocketFactory factory = new PlainConnectionSocketFactory();
             builder.register("http", factory);
             KeyStore trustStore = KeyStore.getInstance(KeyStore

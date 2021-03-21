@@ -1,7 +1,7 @@
 package com.xq.xtool.http.annotation;
 
 import org.springframework.core.annotation.AliasFor;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.http.HttpMethod;
 
 import java.lang.annotation.*;
 
@@ -15,6 +15,6 @@ public @interface HttpApiPath {
     @AliasFor("value")
     String path() default "";
 
-    RequestMethod method() default RequestMethod.GET;
+    HttpMethod method() default HttpMethod.GET;
 
 }

@@ -9,9 +9,9 @@ class XtoolApplicationTests {
 //    @Autowired
 //    private IUserDao dao;
 
+
     @Test
-    void contextLoads() {
-//        dao.getUserName();
+    void contextLoads() throws InterruptedException {
     }
 
 }

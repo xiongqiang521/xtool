@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "product_revert")
-public class ProductRevertEntity extends ProductEntityBase{
+public class ProductRevertEntity extends BaseEntity {
     private Date deleteTime;
 
     public Date getDeleteTime() {

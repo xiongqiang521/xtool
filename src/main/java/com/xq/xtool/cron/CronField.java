@@ -1,7 +1,5 @@
 package com.xq.xtool.cron;
 
-import lombok.Getter;
-
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoField;
 import java.util.ArrayList;
@@ -21,7 +19,6 @@ import java.util.stream.Stream;
  * @description cron表达式 单个属性
  * @projectName spring-task
  */
-@Getter
 public abstract class CronField {
 
     private final String cron;
@@ -34,6 +31,17 @@ public abstract class CronField {
 
     private final ChronoField chronoField;
 
+    protected ChronoField getChronoField() {
+        return chronoField;
+    }
+
+    protected List<Integer> getRange() {
+        return range;
+    }
+
+    protected int getStart() {
+        return start;
+    }
 
     protected CronField(int min, int max, ChronoField chronoField, String cron) {
         this.chronoField = chronoField;

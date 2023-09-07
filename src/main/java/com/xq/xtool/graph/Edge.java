@@ -1,6 +1,6 @@
 package com.xq.xtool.graph;
 
-import com.sun.istack.NotNull;
+import com.sun.istack.internal.NotNull;
 
 import java.util.Objects;
 
